@@ -7,7 +7,7 @@ auth = HTTPBasicAuth()
 
 # for testing purposes - remove when deploying
 user = 'admin'
-password = 'strongpassword'
+password = '`B4NY-Vb"Tz;6rp'
 
 users = {
     user : generate_password_hash(password),
