@@ -9,12 +9,13 @@ import os
 app = Flask(__name__, static_folder='static', template_folder='templates')
 auth = HTTPBasicAuth()
 
-user = os.environ.get('USER')
-password = os.environ.get('PASSWORD')
+user = 'h4ck3r'
+secretpassw0rd = '74ad15aeceba38ce1b0504a2dfb7a38a'
 
 users = {
-    user : generate_password_hash(password),
+    user : generate_password_hash(secretpassw0rd),
 }
+
 
 @auth.verify_password
 def verify_password(username, password):
