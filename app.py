@@ -2,12 +2,12 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 auth = HTTPBasicAuth()
 
 # for testing purposes - remove when deploying
 user = 'admin'
-password = 'stongpassword'
+password = 'strongpassword'
 
 users = {
     user : generate_password_hash(password),
@@ -25,4 +25,4 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, host='0.0.0.0', port=12345)
