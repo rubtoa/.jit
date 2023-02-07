@@ -10,7 +10,7 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 auth = HTTPBasicAuth()
 
 user = os.environ.get('USER')
-password = os.environ.get('PASSWORD')
+secretpassw0rd = os.environ.get('PASSWORD')
 flag = os.environ.get('FLAG')
 
 users = {
