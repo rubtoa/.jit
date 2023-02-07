@@ -11,6 +11,7 @@ auth = HTTPBasicAuth()
 
 user = os.environ.get('USER')
 password = os.environ.get('PASSWORD')
+flag = os.environ.get('FLAG')
 
 users = {
     user : generate_password_hash(secretpassw0rd),
