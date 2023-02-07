@@ -9,8 +9,8 @@ import os
 app = Flask(__name__, static_folder='static', template_folder='templates')
 auth = HTTPBasicAuth()
 
-user = 'h4ck3r'
-secretpassw0rd = '74ad15aeceba38ce1b0504a2dfb7a38a'
+user = os.environ.get('USER')
+password = os.environ.get('PASSWORD')
 
 users = {
     user : generate_password_hash(secretpassw0rd),
