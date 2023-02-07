@@ -1,14 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 auth = HTTPBasicAuth()
 
-# for testing purposes - remove when deploying
-user = 'admin'
-password = '`B4NY-Vb"Tz;6rp'
 
+
+user = os.environ.get('USER')
+password = os.environ.get('PASSWORD')
 users = {
     user : generate_password_hash(password),
 }
