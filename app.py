@@ -27,7 +27,7 @@ def verify_password(username, password):
 @app.route('/')
 @auth.login_required
 def index():
-    return render_template('index.html')
+    return render_template('index.html', flag=flag)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=12345)
